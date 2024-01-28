@@ -136,6 +136,7 @@ export default function App () {
   function level1 () {
     restart()
     setRestart('visible')
+    setLevelShown('1')
     const min = 3000
     const max = 10000
     console.log('Level 1')
@@ -143,6 +144,7 @@ export default function App () {
   }
 
   function level2 () {
+    setLevelShown('2')
     const min = 2750
     const max = 9000
     console.log('Level 2')
@@ -150,6 +152,7 @@ export default function App () {
   }
 
   function level3 () {
+    setLevelShown('3')
     const min = 2500
     const max = 8000
     console.log('Level 3')
@@ -157,6 +160,7 @@ export default function App () {
   }
 
   function level4 () {
+    setLevelShown('4')
     const min = 2250
     const max = 7000
     console.log('Level 4')
@@ -164,6 +168,7 @@ export default function App () {
   }
 
   function level5 () {
+    setLevelShown('5')
     const min = 2000
     const max = 6000
     console.log('Level 5')
@@ -171,6 +176,7 @@ export default function App () {
   }
 
   function level6 () {
+    setLevelShown('6')
     const min = 1750
     const max = 5000
     console.log('Level 6')
@@ -178,6 +184,7 @@ export default function App () {
   }
 
   function level7 () {
+    setLevelShown('7')
     const min = 1500
     const max = 4000
     console.log('Level 7')
@@ -185,6 +192,7 @@ export default function App () {
   }
 
   function level8 () {
+    setLevelShown('8')
     const min = 1250
     const max = 3000
     console.log('Level 8')
@@ -192,6 +200,7 @@ export default function App () {
   }
 
   function level9 () {
+    setLevelShown('9')
     const min = 1000
     const max = 2000
     console.log('Level 9')
@@ -199,6 +208,7 @@ export default function App () {
   }
 
   function level10 () {
+    setLevelShown('10')
     const min = 1000
     const max = 2000
     console.log('Level 10')
@@ -206,6 +216,7 @@ export default function App () {
   }
 
   function level11 () {
+    setLevelShown('11')
     const min = 1000
     const max = 2000
     console.log('Level 11')
@@ -386,96 +397,96 @@ export default function App () {
 
   return (
     <View onload={reset} title="Screen" style={{ alignItems: 'center', paddingTop: '30%' }}>
-      <View title="Column" style={{ flexDirection: 'column', justifyContent: 'space-around' }}>
-        {Restart === 'invisible' && null}
-        {Restart === 'visible' && <View style={styles.button}><Text style={styles.white} onPress={restart}>RESTART</Text></View>}
-        <View >
-          {LevelShown === '1' && <View style={styles.button}><Text style={styles.white}>LEVEL 1</Text></View>}
-          {LevelShown === '2' && <View style={styles.button}><Text style={styles.white}>LEVEL 2</Text></View>}
-          {LevelShown === '3' && <View style={styles.button}><Text style={styles.white}>LEVEL 3</Text></View>}
-          {LevelShown === '4' && <View style={styles.button}><Text style={styles.white}>LEVEL 4</Text></View>}
-          {LevelShown === '5' && <View style={styles.button}><Text style={styles.white}>LEVEL 5</Text></View>}
-          {LevelShown === '6' && <View style={styles.button}><Text style={styles.white}>LEVEL 6</Text></View>}
-          {LevelShown === '7' && <View style={styles.button}><Text style={styles.white}>LEVEL 7</Text></View>}
-          {LevelShown === '8' && <View style={styles.button}><Text style={styles.white}>LEVEL 8</Text></View>}
-          {LevelShown === '9' && <View style={styles.button}><Text style={styles.white}>LEVEL 9</Text></View>}
-          {LevelShown === '10' && <View style={styles.button}><Text style={styles.white}>LEVEL 10</Text></View>}
-          {LevelShown === '11' && <View style={styles.button}><Text style={styles.white}>LEVEL 11</Text></View>}
-        </View>
-        <View >
-          {Level === 'null' && <View style={styles.button}><Text style={styles.white}>TOUCH THE BARS!</Text></View>}
-          {Level === '1' && <View style={styles.button}><Text style={styles.white} onPress={level1}>START</Text></View>}
-          {Level === 'Next' && <View style={styles.button}><Text style={styles.white} onPress={nextLevel}>NEXT LEVEL</Text></View>}
-          {Level === 'Retry' && <View style={styles.button}><Text style={styles.white} onPress={retryLevel}>RETRY LEVEL</Text></View>}
-        </View>
+        <View title="Column" style={{ flexDirection: 'column', justifyContent: 'space-around' }}>
+          {Restart === 'invisible' && null}
+          {Restart === 'visible' && <View style={styles.button}><Text style={styles.white} onPress={restart}>RESTART</Text></View>}
+          <View>
+            {LevelShown === '1' && <View style={styles.button}><Text style={styles.white}>LEVEL 1</Text></View>}
+            {LevelShown === '2' && <View style={styles.button}><Text style={styles.white}>LEVEL 2</Text></View>}
+            {LevelShown === '3' && <View style={styles.button}><Text style={styles.white}>LEVEL 3</Text></View>}
+            {LevelShown === '4' && <View style={styles.button}><Text style={styles.white}>LEVEL 4</Text></View>}
+            {LevelShown === '5' && <View style={styles.button}><Text style={styles.white}>LEVEL 5</Text></View>}
+            {LevelShown === '6' && <View style={styles.button}><Text style={styles.white}>LEVEL 6</Text></View>}
+            {LevelShown === '7' && <View style={styles.button}><Text style={styles.white}>LEVEL 7</Text></View>}
+            {LevelShown === '8' && <View style={styles.button}><Text style={styles.white}>LEVEL 8</Text></View>}
+            {LevelShown === '9' && <View style={styles.button}><Text style={styles.white}>LEVEL 9</Text></View>}
+            {LevelShown === '10' && <View style={styles.button}><Text style={styles.white}>LEVEL 10</Text></View>}
+            {LevelShown === '11' && <View style={styles.button}><Text style={styles.white}>LEVEL 11</Text></View>}
+          </View>
+          <View>
+            {Level === 'null' && <View style={styles.button}><Text style={styles.white}>TOUCH THE BARS!</Text></View>}
+            {Level === '1' && <View style={styles.button}><Text style={styles.white} onPress={level1}>START</Text></View>}
+            {Level === 'Next' && <View style={styles.button}><Text style={styles.white} onPress={nextLevel}>NEXT LEVEL</Text></View>}
+            {Level === 'Retry' && <View style={styles.button}><Text style={styles.white} onPress={retryLevel}>RETRY LEVEL</Text></View>}
+          </View>
 
-        <View title="Row1" style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-          <View >
-            {shouldShow1 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
-            {shouldShow1 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed1} />}
-            {shouldShow1 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
-            {shouldShow1 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+          <View title="Row1" style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+            <View>
+              {shouldShow1 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {shouldShow1 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed1} />}
+              {shouldShow1 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
+              {shouldShow1 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+            </View>
+            <View>
+              {shouldShow2 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {shouldShow2 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed2} />}
+              {shouldShow2 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
+              {shouldShow2 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+            </View>
+            <View>
+              {shouldShow3 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {shouldShow3 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed3} />}
+              {shouldShow3 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
+              {shouldShow3 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+            </View>
           </View>
-          <View >
-            {shouldShow2 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
-            {shouldShow2 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed2} />}
-            {shouldShow2 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
-            {shouldShow2 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+          <View title="Row2" style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'flex-start' }}>
+            <View>
+              {shouldShow4 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {shouldShow4 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed4} />}
+              {shouldShow4 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
+              {shouldShow4 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+            </View>
+            <View>
+              {shouldShow5 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {shouldShow5 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed5} />}
+              {shouldShow5 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
+              {shouldShow5 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+            </View>
+            <View>
+              {shouldShow6 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {shouldShow6 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed6} />}
+              {shouldShow6 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
+              {shouldShow6 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+            </View>
           </View>
-          <View >
-          {shouldShow3 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
-            {shouldShow3 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed3} />}
-            {shouldShow3 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
-            {shouldShow3 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+          <View title="Row3" style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'flex-start' }}>
+            <View>
+              {shouldShow7 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {shouldShow7 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed7} />}
+              {shouldShow7 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
+              {shouldShow7 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+            </View>
+            <View>
+              {shouldShow8 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {shouldShow8 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed8} />}
+              {shouldShow8 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
+              {shouldShow8 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+            </View>
+            <View>
+              {shouldShow9 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {shouldShow9 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed9} />}
+              {shouldShow9 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
+              {shouldShow9 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+            </View>
           </View>
-        </View>
-        <View title="Row2" style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'flex-start' }}>
-          <View >
-            {shouldShow4 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
-            {shouldShow4 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed4} />}
-            {shouldShow4 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
-            {shouldShow4 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+          <View>
+            {shouldShowColcusion === 'null' && <View style={styles.button}><Text style={styles.white}></Text></View>}
+            {shouldShowColcusion === 'win' && <View style={styles.button}><Text style={styles.white}>YOU WIN!</Text></View>}
+            {shouldShowColcusion === 'lose' && <View style={styles.button}><Text style={styles.white}>YOU LOSE!</Text></View>}
           </View>
-          <View >
-            {shouldShow5 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
-            {shouldShow5 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed5} />}
-            {shouldShow5 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
-            {shouldShow5 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
-          </View>
-          <View >
-            {shouldShow6 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
-            {shouldShow6 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed6} />}
-            {shouldShow6 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
-            {shouldShow6 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
-          </View>
-        </View>
-        <View title="Row3" style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'flex-start' }}>
-          <View >
-            {shouldShow7 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
-            {shouldShow7 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed7} />}
-            {shouldShow7 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
-            {shouldShow7 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
-          </View>
-          <View >
-            {shouldShow8 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
-            {shouldShow8 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed8} />}
-            {shouldShow8 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
-            {shouldShow8 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
-          </View>
-          <View >
-            {shouldShow9 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
-            {shouldShow9 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed9} />}
-            {shouldShow9 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
-            {shouldShow9 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
-          </View>
-        </View>
-        <View >
-          {shouldShowColcusion === 'null' && <View style={styles.button}><Text style={styles.white}></Text></View>}
-          {shouldShowColcusion === 'win' && <View style={styles.button}><Text style={styles.white}>YOU WIN!</Text></View>}
-          {shouldShowColcusion === 'lose' && <View style={styles.button}><Text style={styles.white}>YOU LOSE!</Text></View>}
         </View>
       </View>
-    </View>
   )
 }
 
