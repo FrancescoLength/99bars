@@ -366,7 +366,7 @@ export default function App () {
       if (cross === 0) {
         console.log('YOU WIN!')
 
-        // Show "Hai vinto"
+        // Show "YOU WIN!"
         setShouldShowColcusion('win')
 
         // Change button to go to the next level
@@ -374,7 +374,7 @@ export default function App () {
       } else {
         console.log('YOU LOSE!')
 
-        // Show "Hai perso"
+        // Show 'YOU LOSE!'
         setShouldShowColcusion('lose')
 
         // Change button to retry the level
@@ -471,7 +471,7 @@ export default function App () {
         </View>
         <View >
           {shouldShowColcusion === 'null' && <View style={styles.button}><Text style={styles.white}></Text></View>}
-          {shouldShowColcusion === 'win' && <View style={styles.button}><Text style={styles.white}>YOU WON!</Text></View>}
+          {shouldShowColcusion === 'win' && <View style={styles.button}><Text style={styles.white}>YOU WIN!</Text></View>}
           {shouldShowColcusion === 'lose' && <View style={styles.button}><Text style={styles.white}>YOU LOSE!</Text></View>}
         </View>
       </View>
