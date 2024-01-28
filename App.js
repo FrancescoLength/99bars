@@ -19,6 +19,7 @@ export default function App () {
   const [shouldShow8, setShouldShow8] = useState('null')
   const [shouldShow9, setShouldShow9] = useState('null')
   const [shouldShowColcusion, setShouldShowColcusion] = useState('null')
+  const [score, setScore] = useState(0)
 
   const setShouldShowArray = [setShouldShow1, setShouldShow2, setShouldShow3, setShouldShow4, setShouldShow5, setShouldShow6, setShouldShow7, setShouldShow8, setShouldShow9]
 
@@ -28,6 +29,7 @@ export default function App () {
     clearTimeout()
     hideAllbars()
     setShouldShowColcusion('null')
+    setScore(0)
   }
 
   function hideBar (setShouldShow) {
@@ -75,6 +77,8 @@ export default function App () {
     showCircle(setShouldShow1)
     // Cancel countdown
     clearTimeout(id1)
+    // increase score
+    setScore(score + 1)
   }
 
   function barPressed2 () {
@@ -82,6 +86,8 @@ export default function App () {
     showCircle(setShouldShow2)
     // Cancel countdown
     clearTimeout(id2)
+    // increase score
+    setScore(score + 1)
   }
 
   function barPressed3 () {
@@ -89,6 +95,8 @@ export default function App () {
     showCircle(setShouldShow3)
     // Cancel countdown
     clearTimeout(id3)
+    // increase score
+    setScore(score + 1)
   }
 
   function barPressed4 () {
@@ -96,6 +104,8 @@ export default function App () {
     showCircle(setShouldShow4)
     // Cancel countdown
     clearTimeout(id4)
+    // increase score
+    setScore(score + 1)
   }
 
   function barPressed5 () {
@@ -103,6 +113,8 @@ export default function App () {
     showCircle(setShouldShow5)
     // Cancel countdown
     clearTimeout(id5)
+    // increase score
+    setScore(score + 1)
   }
 
   function barPressed6 () {
@@ -110,6 +122,8 @@ export default function App () {
     showCircle(setShouldShow6)
     // Cancel countdown
     clearTimeout(id6)
+    // increase score
+    setScore(score + 1)
   }
 
   function barPressed7 () {
@@ -117,6 +131,8 @@ export default function App () {
     showCircle(setShouldShow7)
     // Cancel countdown
     clearTimeout(id7)
+    // increase score
+    setScore(score + 1)
   }
 
   function barPressed8 () {
@@ -124,6 +140,8 @@ export default function App () {
     showCircle(setShouldShow8)
     // Cancel countdown
     clearTimeout(id8)
+    // increase score
+    setScore(score + 1)
   }
 
   function barPressed9 () {
@@ -131,6 +149,8 @@ export default function App () {
     showCircle(setShouldShow9)
     // Cancel countdown
     clearTimeout(id9)
+    // increase score
+    setScore(score + 1)
   }
 
   function level1 () {
@@ -390,7 +410,11 @@ export default function App () {
 
         // Change button to retry the level
         setLevel('Retry')
+
+        // Adjust score
+        setScore((LevelShown - 1) * 9)
       }
+      console.log('Score = ' + score)
       console.log('------------')
     }, Math.max.apply(null, random))
   }
@@ -398,8 +422,15 @@ export default function App () {
   return (
     <View onload={reset} title="Screen" style={{ alignItems: 'center', paddingTop: '30%' }}>
         <View title="Column" style={{ flexDirection: 'column', justifyContent: 'space-around' }}>
+
+          {/* RESTART BUTTON */}
           {Restart === 'invisible' && null}
           {Restart === 'visible' && <View style={styles.button}><Text style={styles.white} onPress={restart}>RESTART</Text></View>}
+
+          {/* SCORE BUTTON */}
+          <View style={styles.button}><Text style={styles.white}>SCORE: {score}</Text></View>
+
+          {/* LEVEL BUTTON */}
           <View>
             {LevelShown === '1' && <View style={styles.button}><Text style={styles.white}>LEVEL 1</Text></View>}
             {LevelShown === '2' && <View style={styles.button}><Text style={styles.white}>LEVEL 2</Text></View>}
@@ -413,6 +444,8 @@ export default function App () {
             {LevelShown === '10' && <View style={styles.button}><Text style={styles.white}>LEVEL 10</Text></View>}
             {LevelShown === '11' && <View style={styles.button}><Text style={styles.white}>LEVEL 11</Text></View>}
           </View>
+
+          {/* START GAME BUTTON */}
           <View>
             {Level === 'null' && <View style={styles.button}><Text style={styles.white}>TOUCH THE BARS!</Text></View>}
             {Level === '1' && <View style={styles.button}><Text style={styles.white} onPress={level1}>START</Text></View>}
@@ -420,6 +453,7 @@ export default function App () {
             {Level === 'Retry' && <View style={styles.button}><Text style={styles.white} onPress={retryLevel}>RETRY LEVEL</Text></View>}
           </View>
 
+          {/* MATRIX BUTTONS */}
           <View title="Row1" style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
             <View>
               {shouldShow1 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
@@ -480,6 +514,8 @@ export default function App () {
               {shouldShow9 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
             </View>
           </View>
+
+          {/* RESULT BUTTON */}
           <View>
             {shouldShowColcusion === 'null' && <View style={styles.button}><Text style={styles.white}></Text></View>}
             {shouldShowColcusion === 'win' && <View style={styles.button}><Text style={styles.white}>YOU WIN!</Text></View>}
