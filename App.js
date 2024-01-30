@@ -3,58 +3,60 @@ import React, { useState } from 'react'
 import { StyleSheet, View, Text, Image } from 'react-native'
 
 export default function App () {
-  const [Level, setLevel] = useState('1')
+  const [Restart, setRestart] = useState('invisible')
+
+  const [Score, setScore] = useState(0)
 
   const [LevelShown, setLevelShown] = useState('0')
 
-  const [Restart, setRestart] = useState('invisible')
+  const [StartButton, setStartButton] = useState('Start')
 
-  const [shouldShow1, setShouldShow1] = useState('null')
-  const [shouldShow2, setShouldShow2] = useState('null')
-  const [shouldShow3, setShouldShow3] = useState('null')
-  const [shouldShow4, setShouldShow4] = useState('null')
-  const [shouldShow5, setShouldShow5] = useState('null')
-  const [shouldShow6, setShouldShow6] = useState('null')
-  const [shouldShow7, setShouldShow7] = useState('null')
-  const [shouldShow8, setShouldShow8] = useState('null')
-  const [shouldShow9, setShouldShow9] = useState('null')
-  const [shouldShowColcusion, setShouldShowColcusion] = useState('null')
-  const [score, setScore] = useState(0)
+  const [Button1, setButton1] = useState('null')
+  const [Button2, setButton2] = useState('null')
+  const [Button3, setButton3] = useState('null')
+  const [Button4, setButton4] = useState('null')
+  const [Button5, setButton5] = useState('null')
+  const [Button6, setButton6] = useState('null')
+  const [Button7, setButton7] = useState('null')
+  const [Button8, setButton8] = useState('null')
+  const [Button9, setButton9] = useState('null')
 
-  const setShouldShowArray = [setShouldShow1, setShouldShow2, setShouldShow3, setShouldShow4, setShouldShow5, setShouldShow6, setShouldShow7, setShouldShow8, setShouldShow9]
+  const [Conclusion, setConclusion] = useState('null')
+
+  const setButtonArray = [setButton1, setButton2, setButton3, setButton4, setButton5, setButton6, setButton7, setButton8, setButton9]
 
   function restart () {
-    setLevel('1')
+    setStartButton('Start')
     setLevelShown('1')
     clearTimeout()
     hideAllbars()
-    setShouldShowColcusion('null')
+    setConclusion('null')
     setScore(0)
   }
 
-  function hideBar (setShouldShow) {
-    setShouldShow('null')
+  function hideBar (setButton) {
+    setButton('null')
     // console.log("Log status NULL");
   }
 
-  function showBar (setShouldShow) {
-    setShouldShow('bar')
+  function showBar (setButton) {
+    setButton('bar')
     // console.log("Log status BAR");
   }
 
-  function showCircle (setShouldShow) {
-    setShouldShow('circle')
+  function showCircle (setButton) {
+    setButton('circle')
     // console.log("Log status CIRCLE");
   }
 
-  function showCross (setShouldShow) {
-    setShouldShow('cross')
+  function showCross (setButton) {
+    setButton('cross')
     // console.log("Log status CROSS");
   }
 
   function hideAllbars () {
-    for (let i = 0; i < setShouldShowArray.length; i++) {
-      hideBar(setShouldShowArray[i])
+    for (let i = 0; i < setButtonArray.length; i++) {
+      hideBar(setButtonArray[i])
     }
   }
 
@@ -66,91 +68,91 @@ export default function App () {
     hideAllbars()
 
     // Reset conclusion view
-    setShouldShowColcusion('null')
+    setConclusion('null')
 
     // Hide Start button
-    setLevel('null')
+    setStartButton('null')
   }
 
   function barPressed1 () {
     // Show Circle image
-    showCircle(setShouldShow1)
+    showCircle(setButton1)
     // Cancel countdown
     clearTimeout(id1)
-    // increase score
-    setScore(score + 1)
+    // increase Score
+    setScore(Score + 1)
   }
 
   function barPressed2 () {
     // Show Circle image
-    showCircle(setShouldShow2)
+    showCircle(setButton2)
     // Cancel countdown
     clearTimeout(id2)
-    // increase score
-    setScore(score + 1)
+    // increase Score
+    setScore(Score + 1)
   }
 
   function barPressed3 () {
     // Show Circle image
-    showCircle(setShouldShow3)
+    showCircle(setButton3)
     // Cancel countdown
     clearTimeout(id3)
-    // increase score
-    setScore(score + 1)
+    // increase Score
+    setScore(Score + 1)
   }
 
   function barPressed4 () {
     // Show Circle image
-    showCircle(setShouldShow4)
+    showCircle(setButton4)
     // Cancel countdown
     clearTimeout(id4)
-    // increase score
-    setScore(score + 1)
+    // increase Score
+    setScore(Score + 1)
   }
 
   function barPressed5 () {
     // Show Circle image
-    showCircle(setShouldShow5)
+    showCircle(setButton5)
     // Cancel countdown
     clearTimeout(id5)
-    // increase score
-    setScore(score + 1)
+    // increase Score
+    setScore(Score + 1)
   }
 
   function barPressed6 () {
     // Show Circle image
-    showCircle(setShouldShow6)
+    showCircle(setButton6)
     // Cancel countdown
     clearTimeout(id6)
-    // increase score
-    setScore(score + 1)
+    // increase Score
+    setScore(Score + 1)
   }
 
   function barPressed7 () {
     // Show Circle image
-    showCircle(setShouldShow7)
+    showCircle(setButton7)
     // Cancel countdown
     clearTimeout(id7)
-    // increase score
-    setScore(score + 1)
+    // increase Score
+    setScore(Score + 1)
   }
 
   function barPressed8 () {
     // Show Circle image
-    showCircle(setShouldShow8)
+    showCircle(setButton8)
     // Cancel countdown
     clearTimeout(id8)
-    // increase score
-    setScore(score + 1)
+    // increase Score
+    setScore(Score + 1)
   }
 
   function barPressed9 () {
     // Show Circle image
-    showCircle(setShouldShow9)
+    showCircle(setButton9)
     // Cancel countdown
     clearTimeout(id9)
-    // increase score
-    setScore(score + 1)
+    // increase Score
+    setScore(Score + 1)
   }
 
   function level1 () {
@@ -273,11 +275,11 @@ export default function App () {
   }
 
   function nextLevel () {
-    // Increase the level
-    setLevelShown(parseInt(LevelShown) + 1)
-
     // Take current int value from level mostrato
     const thisLevel = parseInt(LevelShown)
+
+    // Increase the level
+    setLevelShown(thisLevel + 1)
 
     if (thisLevel === 1) {
       level2()
@@ -330,66 +332,66 @@ export default function App () {
     // Show for every element the bar in the half time of the timer assigned
     function setDelayShowBar (i) {
       setTimeout(() => {
-        showBar(setShouldShowArray[i])
+        showBar(setButtonArray[i])
       }, random[i] / 2)
     }
 
     // Show Bar image
-    for (let i = 0; i < setShouldShowArray.length; i++) {
+    for (let i = 0; i < setButtonArray.length; i++) {
       setDelayShowBar(i)
     }
 
     id1 = setTimeout(() => {
       // Show Cross image
-      showCross(setShouldShow1)
+      showCross(setButton1)
       cross++
     }, random[0])
 
     id2 = setTimeout(() => {
       // Show Cross image
-      showCross(setShouldShow2)
+      showCross(setButton2)
       cross++
     }, random[1])
 
     id3 = setTimeout(() => {
       // Show Cross image
-      showCross(setShouldShow3)
+      showCross(setButton3)
       cross++
     }, random[2])
 
     id4 = setTimeout(() => {
       // Show Cross image
-      showCross(setShouldShow4)
+      showCross(setButton4)
       cross++
     }, random[3])
 
     id5 = setTimeout(() => {
       // Show Cross image
-      showCross(setShouldShow5)
+      showCross(setButton5)
       cross++
     }, random[4])
 
     id6 = setTimeout(() => {
       // Show Cross image
-      showCross(setShouldShow6)
+      showCross(setButton6)
       cross++
     }, random[5])
 
     id7 = setTimeout(() => {
       // Show Cross image
-      showCross(setShouldShow7)
+      showCross(setButton7)
       cross++
     }, random[6])
 
     id8 = setTimeout(() => {
       // Show Cross image
-      showCross(setShouldShow8)
+      showCross(setButton8)
       cross++
     }, random[7])
 
     id9 = setTimeout(() => {
       // Show Cross image
-      showCross(setShouldShow9)
+      showCross(setButton9)
       cross++
     }, random[8])
 
@@ -398,23 +400,23 @@ export default function App () {
         console.log('YOU WIN!')
 
         // Show "YOU WIN!"
-        setShouldShowColcusion('win')
+        setConclusion('win')
 
         // Change button to go to the next level
-        setLevel('Next')
+        setStartButton('Next')
       } else {
         console.log('YOU LOSE!')
 
         // Show 'YOU LOSE!'
-        setShouldShowColcusion('lose')
+        setConclusion('lose')
 
         // Change button to retry the level
-        setLevel('Retry')
+        setStartButton('Retry')
 
-        // Adjust score
-        setScore((LevelShown - 1) * 9)
+        // Set Score
+        setScore(Score)
       }
-      console.log('Score = ' + score)
+      console.log('Score = ' + Score)
       console.log('------------')
     }, Math.max.apply(null, random))
   }
@@ -428,7 +430,7 @@ export default function App () {
           {Restart === 'visible' && <View style={styles.button}><Text style={styles.white} onPress={restart}>RESTART</Text></View>}
 
           {/* SCORE BUTTON */}
-          <View style={styles.button}><Text style={styles.white}>SCORE: {score}</Text></View>
+          <View style={styles.button}><Text style={styles.white}>SCORE: {Score}</Text></View>
 
           {/* LEVEL BUTTON */}
           <View>
@@ -447,79 +449,79 @@ export default function App () {
 
           {/* START GAME BUTTON */}
           <View>
-            {Level === 'null' && <View style={styles.button}><Text style={styles.white}>TOUCH THE BARS!</Text></View>}
-            {Level === '1' && <View style={styles.button}><Text style={styles.white} onPress={level1}>START</Text></View>}
-            {Level === 'Next' && <View style={styles.button}><Text style={styles.white} onPress={nextLevel}>NEXT LEVEL</Text></View>}
-            {Level === 'Retry' && <View style={styles.button}><Text style={styles.white} onPress={retryLevel}>RETRY LEVEL</Text></View>}
+            {StartButton === 'null' && <View style={styles.button}><Text style={styles.white}>TOUCH THE BARS!</Text></View>}
+            {StartButton === 'Start' && <View style={styles.button}><Text style={styles.white} onPress={level1}>START</Text></View>}
+            {StartButton === 'Next' && <View style={styles.button}><Text style={styles.white} onPress={nextLevel}>NEXT LEVEL</Text></View>}
+            {StartButton === 'Retry' && <View style={styles.button}><Text style={styles.white} onPress={retryLevel}>RETRY LEVEL</Text></View>}
           </View>
 
           {/* MATRIX BUTTONS */}
           <View title="Row1" style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
             <View>
-              {shouldShow1 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
-              {shouldShow1 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed1} />}
-              {shouldShow1 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
-              {shouldShow1 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {Button1 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {Button1 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed1} />}
+              {Button1 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
+              {Button1 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
             </View>
             <View>
-              {shouldShow2 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
-              {shouldShow2 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed2} />}
-              {shouldShow2 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
-              {shouldShow2 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {Button2 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {Button2 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed2} />}
+              {Button2 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
+              {Button2 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
             </View>
             <View>
-              {shouldShow3 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
-              {shouldShow3 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed3} />}
-              {shouldShow3 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
-              {shouldShow3 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {Button3 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {Button3 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed3} />}
+              {Button3 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
+              {Button3 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
             </View>
           </View>
           <View title="Row2" style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'flex-start' }}>
             <View>
-              {shouldShow4 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
-              {shouldShow4 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed4} />}
-              {shouldShow4 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
-              {shouldShow4 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {Button4 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {Button4 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed4} />}
+              {Button4 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
+              {Button4 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
             </View>
             <View>
-              {shouldShow5 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
-              {shouldShow5 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed5} />}
-              {shouldShow5 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
-              {shouldShow5 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {Button5 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {Button5 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed5} />}
+              {Button5 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
+              {Button5 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
             </View>
             <View>
-              {shouldShow6 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
-              {shouldShow6 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed6} />}
-              {shouldShow6 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
-              {shouldShow6 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {Button6 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {Button6 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed6} />}
+              {Button6 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
+              {Button6 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
             </View>
           </View>
           <View title="Row3" style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'flex-start' }}>
             <View>
-              {shouldShow7 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
-              {shouldShow7 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed7} />}
-              {shouldShow7 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
-              {shouldShow7 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {Button7 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {Button7 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed7} />}
+              {Button7 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
+              {Button7 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
             </View>
             <View>
-              {shouldShow8 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
-              {shouldShow8 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed8} />}
-              {shouldShow8 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
-              {shouldShow8 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {Button8 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {Button8 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed8} />}
+              {Button8 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
+              {Button8 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
             </View>
             <View>
-              {shouldShow9 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
-              {shouldShow9 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed9} />}
-              {shouldShow9 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
-              {shouldShow9 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {Button9 === 'null' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
+              {Button9 === 'bar' && <Image style={styles.image} source={require('./assets/-_icon.png')} onTouchStart={barPressed9} />}
+              {Button9 === 'cross' && <Image style={styles.image} source={require('./assets/x_icon.png')} />}
+              {Button9 === 'circle' && <Image style={styles.image} source={require('./assets/o_icon.png')} />}
             </View>
           </View>
 
           {/* RESULT BUTTON */}
           <View>
-            {shouldShowColcusion === 'null' && <View style={styles.button}><Text style={styles.white}></Text></View>}
-            {shouldShowColcusion === 'win' && <View style={styles.button}><Text style={styles.white}>YOU WIN!</Text></View>}
-            {shouldShowColcusion === 'lose' && <View style={styles.button}><Text style={styles.white}>YOU LOSE!</Text></View>}
+            {Conclusion === 'null' && <View style={styles.button}><Text style={styles.white}></Text></View>}
+            {Conclusion === 'win' && <View style={styles.button}><Text style={styles.white}>YOU WIN!</Text></View>}
+            {Conclusion === 'lose' && <View style={styles.button}><Text style={styles.white}>YOU LOSE!</Text></View>}
           </View>
         </View>
       </View>
@@ -536,7 +538,8 @@ const styles = StyleSheet.create({
   },
   white: {
     color: 'white',
-    fontSize: 32
+    fontSize: 32,
+    fontFamily: 'JockeyOne-Regular'
   },
   image: {
     width: 100,
